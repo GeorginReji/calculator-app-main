@@ -35,20 +35,18 @@ buttons.map( button => {
 Array.from(toggle[0].children).map(item => {
     item.addEventListener('click', (e) => {
         if(e.target.innerHTML == "1") {
-            body.classList.remove('active3');
-            body.classList.remove('active2');
+            body.classList.remove('theme2');
+            body.classList.remove('theme3');
             circle.style.left = '0'
         }
         else if(e.target.innerHTML == "2") {
-            body.classList.add('active2');
-            body.classList.remove('active1');
-            body.classList.remove('active3');
+            body.classList.add('theme2');
+            body.classList.remove('theme3');
             circle.style.left = '40%'
         }
         else {
-            body.classList.add('active3');
-            body.classList.remove('active1');
-            body.classList.remove('active2');
+            body.classList.add('theme3');
+            body.classList.remove('theme2');
             circle.style.left = '75%'
         }
     })

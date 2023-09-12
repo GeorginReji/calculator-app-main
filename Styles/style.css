@@ -5,10 +5,52 @@
     box-sizing: border-box;
     font-family: 'Spartan', sans-serif;
 }
+:root {
+    --mainbgcolor:hsl(222, 26%, 31%);
+    --togglekeypadcolor:hsl(223, 31%, 20%);
+    --screencolor: hsl(224, 36%, 15%);
+    --resetkeybg:hsl(225, 21%, 49%);
+    --resetkeyshadowblue: hsl(224, 28%, 35%);
+    --equlkeybg:hsl(6, 63%, 50%);
+    --equalkeyshadow: hsl(6, 70%, 34%);
+    --equalkeytextcolor:hsl(0, 0%, 100%);
+    --numkeybg: hsl(30, 25%, 89%);
+    --numkeyshadow:hsl(28, 16%, 65%);
+    --numpadtextcolor: hsl(221, 14%, 31%);
+    --screentextcolor:hsl(0, 0%, 100%);
+}
+.theme2 {
+    --mainbgcolor:hsl(0, 0%, 90%);
+    --togglekeypadcolor:hsl(0, 5%, 81%);
+    --screencolor: hsl(0, 0%, 93%);
+    --resetkeybg:hsl(185, 42%, 37%);
+    --resetkeyshadowblue: hsl(185, 58%, 25%);
+    --equlkeybg:hsl(25, 98%, 40%);
+    --equalkeyshadow: hsl(25, 99%, 27%);
+    --equalkeytextcolor:hsl(0, 0%, 100%);
+    --numkeybg: hsl(45, 7%, 89%);
+    --numkeyshadow:hsl(35, 11%, 61%);
+    --numpadtextcolor: hsl(60, 10%, 19%);
+    --screentextcolor:hsl(35, 11%, 61%);
+}
+.theme3 {
+    --mainbgcolor:hsl(268, 75%, 9%);
+    --togglekeypadcolor:hsl(268, 71%, 12%);
+    --screencolor: hsl(268, 71%, 12%);
+    --resetkeybg:hsl(281, 89%, 26%);
+    --resetkeyshadowblue: hsl(285, 91%, 52%);
+    --equlkeybg:hsl(176, 100%, 44%);
+    --equalkeyshadow: hsl(177, 92%, 70%);
+    --equalkeytextcolor:hsl(198, 20%, 13%);
+    --numkeybg: hsl(268, 47%, 21%);
+    --numkeyshadow:hsl(290, 70%, 36%);
+    --numpadtextcolor: hsl(52, 100%, 62%);
+    --screentextcolor:hsl(52, 100%, 62%);
+}
 body {
     width: 100%;
     max-width: 1440px;
-    background-color: hsl(222, 26%, 31%);
+    background-color: var(--mainbgcolor);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -16,57 +58,38 @@ body {
     flex-direction: column;
     outline: none;
 }
-
-body.active2 {
-    background-color: hsl(0, 0%, 93%);
-}
-body.active3 {
-    background-color: hsl(268, 75%, 9%);
-}
 .control {
     display: flex;
     justify-content: flex-end;
 }
 .control p {
-     color: #fff;
+     color:  var(--screentextcolor);
      cursor: pointer;   
      margin-right: 4px;
-}
-body.active2 .control p {
-    color: #111;
-}
-body.active2 h3 {
-    color: #111;
 }
 .control .box {
    width: 60px;
    height: 15px;
-   background-color: hsl(224, 36%, 15%);
+   background-color: var(--togglekeypadcolor);
    border-radius: 30px;
    margin-left: 4px;
    position: relative;
 }
-body.active2 .control .box {
-    background-color:  hsl(0, 5%, 81%);
-}
 .control #circle {
     width: 15px;
     height: 15px;
-    background-color: hsl(6, 63%, 50%);
+    background-color: var(--equlkeybg);
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
     border-radius: 30px;
 }
-body.active2 .control #circle {
-    background-color: hsl(25, 98%, 40%);
-}
 h3 {
-    color: #fff;
+    color: var(--screentextcolor);
 }
 .theme-num {
-    color: #fff;
+    color: var(--screentextcolor);
     display: flex;
     justify-content: space-between;
 }
@@ -76,9 +99,6 @@ h3 {
 }
 .right p {
     cursor: pointer;
-}
-body.active2 .right p {
-    color: #111;
 }
 .theme-num p {
     margin: 0 5px;
@@ -93,9 +113,9 @@ body.active2 .right p {
     font-size: 32px;
     text-align: right;
     padding-right: 10px;
-    background-color: hsl(224, 36%, 15%);
+    background-color: var(--screencolor);
+    color: var(--screentextcolor);
 }
-
 button {
     width: 90px;
     padding: 15px;
@@ -103,14 +123,16 @@ button {
     cursor: pointer;
     border: 0;
     border-radius: 5px;
-    box-shadow: 0px 3px 0px 0px hsl(28, 16%, 65%);
+    box-shadow: 0px 3px 0px 0px var(--numkeyshadow);
     margin: 5px 10px;
+    background-color: var(--numkeybg);
+    color: var(--numpadtextcolor);
 }
 .btn {
     display: flex;
     width: 450px;
     flex-flow: wrap;
-    background-color: hsl(224, 36%, 15%);
+    background-color: var(--togglekeypadcolor);
     padding: 10px 5px;
     margin: 15px 0;
 }
@@ -118,13 +140,14 @@ button {
     width: 200px;
 }
 .reset, .del {
-    box-shadow: 0px 3px 0px 0px hsl(224deg 28% 35%);
-    background-color: hsl(225, 21%, 49%);
+    box-shadow: 0px 3px 0px 0px var(--resetkeyshadowblue);
+    background-color: var(--resetkeybg);
     color: #fff;
 }
 .equal {
-    box-shadow: 0px 3px 0px 0px hsl(6, 70%, 34%);
-    background-color: hsl(6, 63%, 50%);
+    box-shadow: 0px 3px 0px 0px var(--equalkeyshadow);
+    background-color: var(--equlkeybg);
+    color: var(--equalkeytextcolor);
 }
 .btn-num {
     font-size: 32px;
