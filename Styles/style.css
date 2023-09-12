@@ -115,6 +115,7 @@ h3 {
     padding-right: 10px;
     background-color: var(--screencolor);
     color: var(--screentextcolor);
+    border: 0;
 }
 button {
     width: 90px;
