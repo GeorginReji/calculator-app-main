@@ -3,9 +3,6 @@ let display = document.getElementById("display");
 let toggle = document.getElementsByClassName("right");
 let body = document.querySelector("body");
 let circle = document.getElementById("circle");
-// console.log(body);
-// console.log(buttons);
-// console.log(toggle[0].children);
 buttons.map( button => {
     button.addEventListener('click', (e) => {
         switch(e.target.innerHTML){
@@ -16,7 +13,9 @@ buttons.map( button => {
                 display.value = ""
                 break;
             case "=": 
-                display.value = eval(display.value);
+                console.log(display.value);
+                display.value = display.value.startsWith("0") ? 
+                eval(display.value.slice(1)): eval(display.value);
                 break;
             default:
                 let lastChar = display.value.charAt(display.value.length - 1);
@@ -25,6 +24,7 @@ buttons.map( button => {
                     display.value += "";
                 }
                 else {
+                    console.log(e.target.value);
                     display.value += e.target.value;
                 }
         }
